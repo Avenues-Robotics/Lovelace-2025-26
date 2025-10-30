@@ -1,10 +1,12 @@
-package org.firstinspires.ftc.teamcode.teleop;
+package org.firstinspires.ftc.teamcode.auto;
 
-import static org.firstinspires.ftc.teamcode.teleop.MOV_cam.is_ID;
-import static org.firstinspires.ftc.teamcode.teleop.MOV_cam.tag_ID;
+import static org.firstinspires.ftc.teamcode.movement.MOV_cam.is_ID;
+import static org.firstinspires.ftc.teamcode.movement.MOV_cam.tag_ID;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+
+import org.firstinspires.ftc.teamcode.movement.MOV_cam;
 
 import java.util.Objects;
 
