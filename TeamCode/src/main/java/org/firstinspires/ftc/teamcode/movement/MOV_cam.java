@@ -27,11 +27,7 @@ public class MOV_cam {
 
     public static Boolean is_ID(){
         List<AprilTagDetection> currentDetections = myAprilTagProcessor.getDetections();
-        if (!currentDetections.isEmpty()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !currentDetections.isEmpty(); // true if a tag *is* detected
     }
     public static String tag_ID() {
         List<AprilTagDetection> currentDetections = myAprilTagProcessor.getDetections();
