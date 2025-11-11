@@ -36,6 +36,7 @@ public class MOV_cam {
 
         for (AprilTagDetection tag : currentDetections) {
             telemetry.addData("Tag ID", tag.id);
+            telemetry.update();
             if (tag.id == 21) {
                 APRT = "GPP";
             } else if (tag.id == 22) {
@@ -45,8 +46,8 @@ public class MOV_cam {
             }
             telemetry.addData("Position (x,y,z)", "%.2f, %.2f, %.2f",
                     tag.ftcPose.x, tag.ftcPose.y, tag.ftcPose.z);
+            telemetry.update();
         }
-        telemetry.update();
         return APRT;
     }
 
