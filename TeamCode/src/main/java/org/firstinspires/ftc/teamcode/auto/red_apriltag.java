@@ -32,8 +32,8 @@ public class red_apriltag extends LinearOpMode {
         BR = hardwareMap.get(DcMotor.class, "BR");
 
         FL.setDirection(DcMotor.Direction.FORWARD);
-        FR.setDirection(DcMotor.Direction.FORWARD);
-        BL.setDirection(DcMotor.Direction.REVERSE);
+        FR.setDirection(DcMotor.Direction.REVERSE); //FR AND BR ARE IN REVERSE !! !! !! !!
+        BL.setDirection(DcMotor.Direction.FORWARD);
         BR.setDirection(DcMotor.Direction.REVERSE);
 
         MOV_cam.vid(hardwareMap);
