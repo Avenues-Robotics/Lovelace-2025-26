@@ -20,9 +20,9 @@ public class movement {
         rotations = distance * 21.74;
         // SET TARGET POSITION
         FR.setTargetPosition((int) rotations);
-        FL.setTargetPosition((int) -rotations);
+        FL.setTargetPosition((int) rotations); //was neg
         BL.setTargetPosition((int) rotations);
-        BR.setTargetPosition((int) -rotations);
+        BR.setTargetPosition((int) rotations); //was neg, switch back to neg if this doesn't work, for last year and test bot
         // RUN TO POSITION
         BL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         BR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -46,10 +46,10 @@ public class movement {
         reset_encoders(BL, BR, FL, FR);
         rotations = distance * 21.74;
         // SET TARGET POSITION
-        FR.setTargetPosition((int) rotations);
-        FL.setTargetPosition((int) rotations);
+        FR.setTargetPosition((int) rotations); //last year, all were positive, same for test bot
+        FL.setTargetPosition((int) -rotations);
         BL.setTargetPosition((int) rotations);
-        BR.setTargetPosition((int) rotations);
+        BR.setTargetPosition((int) -rotations);
         // RUN TO POSITION
         BL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         BR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -103,7 +103,7 @@ public class movement {
         FR.setTargetPosition((int) -rotations);
         FL.setTargetPosition((int) -rotations);
         BL.setTargetPosition((int) -rotations);
-        BR.setTargetPosition((int) rotations);
+        BR.setTargetPosition((int) -rotations); //was not negative for test bot
         // RUN TO POSITION
         BL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         BR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -246,11 +246,6 @@ public class movement {
     public static void position(Telemetry telemetry, DcMotor BL, DcMotor BR, DcMotor FL, DcMotor FR){
         int pos1 = abs(BR.getCurrentPosition()) + abs(BL.getCurrentPosition()) + abs(FL.getCurrentPosition()) + abs(FR.getCurrentPosition());
         int pos = pos1/4;
-    }
-
-    public static void slidepos(Telemetry telemetry, DcMotor LSL, DcMotor LSR){
-        int pos2 = abs(LSL.getCurrentPosition()) + abs(LSR.getCurrentPosition());
-        int spos = pos2/2;
     }
 
 }
